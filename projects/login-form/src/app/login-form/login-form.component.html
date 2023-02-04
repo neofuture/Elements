@@ -1,0 +1,54 @@
+<div class="form-container">
+  <h3>{{ heading }}</h3>
+  <div class="form--body-copy" *ngIf="body" [innerHTML]="body"></div>
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div class="form--group">
+      <label>Email</label>
+      <input
+        pInputText
+        type="text"
+        formControlName="email"
+        class="form-control"
+        placeholder="Enter your email address"
+        #email
+        [ngClass]="{ 'is-invalid':f['email'].dirty && f['email'].errors }"/>
+      <div *ngIf="f['email'].dirty && f['email'].errors" class="invalid-feedback">
+        <div *ngIf="f['email'].errors['required']">Email is required &#10006;</div>
+        <div *ngIf="f['email'].errors['email']">Email is invalid &#10006;</div>
+      </div>
+      <div *ngIf="!f['email'].errors" class="valid-feedback">OK &#10004;</div>
+    </div>
+    <div class="form--group">
+      <label>Password</label>
+      <p-password
+        formControlName="password"
+        [toggleMask]="true"
+        placeholder="Enter your password"
+        [feedback]="true"
+      >
+      </p-password>
+      <div *ngIf="f['password'].dirty && f['password'].errors" class="invalid-feedback">
+        <div *ngIf="f['password'].errors['required']">Password is required &#10006;</div>
+      </div>
+    </div>
+
+    <div class="form--buttons">
+      <div class="remember-me">
+
+        <p-checkbox name="remember-me" value="Remember me" inputId="sf" [binary]="true"></p-checkbox>
+        <label for="sf">Remember Me</label>
+
+      </div>
+      <button
+        pButton
+        type="submit"
+        class="login-button"
+        [disabled]="form.invalid || loading">
+        <app-loading [colour]="'#ffffff'" *ngIf="loading; else login"></app-loading>
+      </button>
+    </div>
+  </form>
+</div>
+
+
+<ng-template #login>Login</ng-template>

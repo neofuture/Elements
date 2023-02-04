@@ -1,0 +1,132 @@
+.form-container {
+  padding: 40px;
+  border-radius: 10px;
+  background-color: var(--green-background);
+  color: var(--black);
+  position: relative;
+  z-index: 1;
+  width: 500px;
+}
+
+.form-container:before {
+  content: '';
+  border-radius: 10px;
+  background-color: var(--white);
+  opacity: 0.3;
+  width: calc(100% - 26px);
+  height: 100%;
+  position: absolute;
+  top: 13px;
+  left: 13px;
+  z-index: -1;
+}
+
+.form-container:after {
+  content: '';
+  border-radius: 10px;
+  background-color: var(--white);
+  opacity: 0.2;
+  width: calc(100% - 52px);
+  height: 100%;
+  position: absolute;
+  top: 23px;
+  left: 26px;
+  z-index: -1;
+}
+
+.form--group {
+  position: relative;
+  margin-bottom: 24px;
+}
+
+.form--ground__name {
+  position: relative;
+  margin-bottom: 24px;
+  display: flex;
+  gap: 8px;
+}
+
+.form--ground__name > div {
+  width: 50%;
+  position: relative;
+}
+
+.form--group > label {
+  margin: 4px 0 4px 0;
+  display: block;
+}
+
+
+.form--checkbox {
+  margin: 14px 0 24px 0;
+  position: relative;
+}
+
+.form--checkbox label {
+  margin-left: 12px;
+}
+
+input[type=text], input[type=password], input[type=tel], :host ::ng-deep .p-password input {
+  width: 100%;
+}
+
+.invalid-feedback {
+  color: #f55050;
+  position: absolute;
+  font-size: 12px;
+  bottom: -18px;
+  right: 0;
+}
+
+.valid-feedback {
+  color: #00c70c;
+  position: absolute;
+  font-size: 12px;
+  bottom: -18px;
+  right: 0;
+}
+
+h3 {
+  margin: 0 0 18px 0;
+  padding: 0;
+  text-align: center;
+  font-size:24px;
+  font-weight: 300;
+}
+
+.form--buttons {
+  text-align: right;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top:12px;
+}
+
+.login-button {
+  width: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.form__footer {
+  padding-top: 24px;
+  text-align: center;
+}
+
+
+.remember-me {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 8px;
+}
+
+.form--body-copy {
+  padding: 0 0 24px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
