@@ -5,11 +5,9 @@
 
     "build-login-form": "ng build login-form --output-hashing=none && cat dist/login-form/{runtime,polyfills,main}.js > ./web-components/login-form.js",
     "build-registration-form": "ng build registration-form --output-hashing=none && cat dist/registration-form/{runtime,polyfills,main}.js > ./web-components/registration-form.js",
-
+    "build-otp-form": "ng build otp-form --output-hashing=none && cat dist/otp-form/{runtime,polyfills,main}.js > ./web-components/otp-form.js",
     "serve": "http-server ./web-components",
-
-    "build-all": "npm run build-login-form && npm run build-registration-form && npm run serve",
-
+    "build-all": "npm run build-login-form && npm run build-registration-form && npm run build-otp-form && npm run serve",
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",

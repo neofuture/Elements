@@ -196,6 +196,97 @@
           }
         }
       }
+    },
+    "otp-form": {
+      "projectType": "application",
+      "schematics": {},
+      "root": "projects/otp-form",
+      "sourceRoot": "projects/otp-form/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/otp-form",
+            "index": "projects/otp-form/src/index.html",
+            "main": "projects/otp-form/src/main.ts",
+            "polyfills": [
+              "zone.js"
+            ],
+            "tsConfig": "projects/otp-form/tsconfig.app.json",
+            "assets": [
+              "projects/otp-form/src/favicon.ico",
+              "projects/otp-form/src/assets"
+            ],
+            "styles": [
+              "projects/otp-form/src/styles.css"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "browserTarget": "otp-form:build:production"
+            },
+            "development": {
+              "browserTarget": "otp-form:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "otp-form:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ],
+            "tsConfig": "projects/otp-form/tsconfig.spec.json",
+            "assets": [
+              "projects/otp-form/src/favicon.ico",
+              "projects/otp-form/src/assets"
+            ],
+            "styles": [
+              "projects/otp-form/src/styles.css"
+            ],
+            "scripts": []
+          }
+        }
+      }
     }
   },
   "cli": {

@@ -9,8 +9,7 @@ import Validation, {startsWith07} from './utils/validation';
   styleUrls: [
     './registration-form.component.css',
     './extra-styles.css'
-  ],
-  encapsulation: ViewEncapsulation.ShadowDom
+  ]
 })
 export class RegistrationFormComponent implements OnInit, AfterViewInit {
   form: FormGroup = new FormGroup({
