@@ -8,7 +8,8 @@ import {ApiService} from "./services/api.service";
   styleUrls: [
     './login-form.component.css',
     './extra-styles.css'
-  ]
+  ],
+  encapsulation: ViewEncapsulation.ShadowDom
 })
 export class LoginFormComponent implements OnInit, AfterViewInit {
   form: FormGroup = new FormGroup({
