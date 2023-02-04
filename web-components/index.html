@@ -11,8 +11,17 @@
 <div class="container">
   <login-form heading="Login" body="Please login to your account"></login-form>
   <registration-form heading="Register" body="Register for your free account"></registration-form>
-  <otp-form heading="Verify Mobile" body="Please enter the code that was sent to your mobile phone" [otpLength]="6"></otp-form>
+  <otp-form heading="Verify Mobile" body="Please enter the code that was sent to your mobile phone" [otpLength]="6" id="otpForm"></otp-form>
 </div>
 <p>Some more static content</p>
+
+<script>
+  const webComponent = document.getElementById('otpForm');
+
+  webComponent.addEventListener('otpChange', event => {
+    const otp = event.detail;
+    console.log('New OTP value: ', otp);
+  });
+</script>
 </body>
 </html>

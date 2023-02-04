@@ -1,4 +1,4 @@
-import {Component, Input, OnInit, ViewEncapsulation} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output, ViewEncapsulation} from '@angular/core';
 
 @Component({
   selector: 'otp-form',
@@ -14,11 +14,13 @@ export class OtpFormComponent implements OnInit{
   @Input() heading: string | undefined;
   @Input() body: string | undefined;
   @Input() otpLength  = 5;
+  @Output() otpChange = new EventEmitter<string>();
   ngOnInit(): void {
   }
 
   onOtpChange($event: string) {
     this.otp = $event;
+    this.otpChange.emit(this.otp);
   }
 }
 
