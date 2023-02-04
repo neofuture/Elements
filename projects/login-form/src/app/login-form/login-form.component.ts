@@ -23,6 +23,7 @@ export class LoginFormComponent implements OnInit, AfterViewInit {
   @ViewChild('email', {static: true}) email?: ElementRef;
   @Input() heading: string | undefined;
   @Input() body: string | undefined;
+  @Input() otp: string= '';
 
   constructor(
     private formBuilder: FormBuilder,
