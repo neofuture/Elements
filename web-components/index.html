@@ -9,15 +9,15 @@
 <body>
 <h1>Some Heading</h1>
 <div class="container">
-  <login-form heading="Login" body="Please login to your account" id="loginForm"></login-form>
-  <registration-form heading="Register" body="Register for your free account"></registration-form>
+  <login-form heading="Login" body="Please login to your account"></login-form>
+  <registration-form heading="Register" body="Register for your free account" id="registerForm"></registration-form>
   <otp-form heading="Verify Mobile" body="Please enter the code that was sent to your mobile phone" [otpLength]="6" id="otpForm"></otp-form>
 </div>
 <p>Some more static content</p>
 
 <script>
   const webComponent = document.getElementById('otpForm');
-  const webComponent2 = document.getElementById('loginForm');
+  const webComponent2 = document.getElementById('registerForm');
   let otp='';
   webComponent.addEventListener('otpChange', event => {
     const otp = event.detail;

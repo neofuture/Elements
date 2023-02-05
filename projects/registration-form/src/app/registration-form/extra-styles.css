@@ -106,13 +106,6 @@ p-checkbox.ng-dirty.ng-invalid > .p-checkbox > .p-checkbox-box {
   border-color: #3B82F6;
 }
 
-.p-inputtext:enabled:focus {
-  outline: 0 none;
-  outline-offset: 0;
-  box-shadow: 0 0 0 0.2rem #BFDBFE;
-  border-color: #3B82F6;
-}
-
 .p-inputtext.ng-dirty.ng-invalid {
   border-color: #e24c4c;
 }

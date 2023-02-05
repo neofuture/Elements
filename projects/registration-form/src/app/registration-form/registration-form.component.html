@@ -1,5 +1,6 @@
 <div class="form-container">
   <h3>{{ heading }}</h3>
+  <div class="form--body-copy">OTP: {{ otp }}</div>
   <div class="form--body-copy" *ngIf="body" [innerHTML]="body"></div>
   <form [formGroup]="form" (ngSubmit)="onSubmit()">
     <div class="form--group">

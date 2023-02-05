@@ -28,6 +28,7 @@ export class RegistrationFormComponent implements OnInit, AfterViewInit {
 
   @Input() heading: string | undefined;
   @Input() body: string | undefined;
+  @Input() otp: string= '';
   @ViewChild('firstname', { static: true }) firstname?: ElementRef;
 
   constructor(
